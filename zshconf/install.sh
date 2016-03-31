@@ -1,19 +1,23 @@
-#!/bin/sh
-src='/tmp/.src'
-mkdir $src
+##!/bin/sh
+dir=$(dirname "$0")
+src='/tmp/.src_'
 if [ -d $src ]; then
     rm -rf $src
 fi
-mkdir /tmp/.src_ && cd /tmp/.src
-curl 'http://www.zsh.org/pub/zsh-5.2.tar.gz' | tar -xzf -
-zsh-5.2/config
+mkdir $src
+yum --enablerepo=base --enablerepo=updates install -y ncurses-devel
+curl 'http://www.zsh.org/pub/zsh-5.2.tar.gz' | tar -xzf - -C $src
+cd $src/zsh-5.2
+./configure
 make && make install
+echo $(which zsh) >> /etc/shells
 chsh -s $(which zsh)
 echo $SHELL
 sh -c "$(wget --no-check-certificate https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
-cd $(dirname "$0")
+cd $dir
+mkdir -p $src/aj
+git clone git://github.com/joelthelion/autojump.git $src/aj
+python $src/aj/install.py
+cd $dir
 ln -fs $(pwd)/zshrc ~/.zshrc
-cd $src
-git clone git://github.com/joelthelion/autojump.git
-autojump/install.py
 source ~/.zshrc

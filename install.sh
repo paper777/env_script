@@ -1,5 +1,5 @@
 #!/env/bash
 yum groupinstall -y "Development Tools"
-dir=$(dirname "$0")
-bash $dir/vimconf/install.sh
-bash $dir/zshconf/install.sh
+cd $(dirname "$0")
+bash ./vimconf/install.sh
+bash ./zshconf/install.sh
