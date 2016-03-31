@@ -1,0 +1,47 @@
+attrcolor b ".I"
+termcapinfo linux 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+#defbce "on"
+
+encoding UTF-8
+
+vbell off
+
+autodetach on
+
+startup_message off
+
+# make the shell in every window a login shell
+shell -$SHELL
+
+defscrollback 5000
+
+#remove some stupid / dangerous key bindings
+bind k
+bind ^k
+bind .
+bind ^\
+bind \\
+bind ^h
+bind h
+
+# bind <F7> to move to previous window
+# bind <F8> to move to next window
+# bind <F9> to create a new screen
+# bind <F10> to kill current session
+# bind <F11> to rename an existing window
+# bind <F12> to detach screen from this terminal
+bindkey -k k7 prev
+bindkey -k k8 next
+bindkey -k k9 screen
+bindkey -k k; kill
+bindkey -k F1 title
+bindkey -k F2 detach
+
+# default windows
+
+screen -t bash 0
+screen -t bash 1
+select 0
+
+hardstatus alwayslastline '%{gk}%-w%{.gk}%n %t%{-}%+Lw %=%{kG}%m-%d %c'
+#hardstatus string '%{= kG}%{C}Screen: %{c}%{= kG}[%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{C} %d-%m %{W}%c %{g}]'

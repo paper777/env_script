@@ -1,0 +1,23 @@
+[color]
+    ui = true
+[core]
+    editor = vim
+[merge]
+    tool = vim-diff
+[mergetool "vim-diff"]
+    cmd = "vim \"$PWD/$MERGED\" \
+        +\":split $PWD/$REMOTE\" +\":set buftype=nowrite\" \
+        +\":wincmd K\" \
+        +\":vertical diffsplit $PWD/$LOCAL\" +\":set buftype=nowrite\" \
+        +\":vertical diffsplit $PWD/$BASE\" +\":set buftype=nowrite\" \
+        "
+[user]
+	name = also 
+	email = paper777@qq.com
+[alias]
+    ci = commit
+    st = status
+    co = checkout
+    br = branch
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset' --abbrev-commit
+    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
