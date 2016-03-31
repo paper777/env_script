@@ -4,5 +4,5 @@ cd $(dirname "$0")
 bash ./vimconf/install.sh
 bash ./zshconf/install.sh
 
-ls -fs $(pwd)/gitconfig ~/.gitconfig
-ls -fs $(pwd)/screenrc ~/.screenrc
+ln -fs $(pwd)/gitconfig ~/.gitconfig
+ln -fs $(pwd)/screenrc ~/.screenrc
