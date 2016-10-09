@@ -30,8 +30,8 @@ bind h
 # bind <F10> to kill current session
 # bind <F11> to rename an existing window
 # bind <F12> to detach screen from this terminal
-bindkey -k k7 prev
-bindkey -k k8 next
+bindkey -k k6 prev
+bindkey -k k7 next
 bindkey -k k9 screen
 bindkey -k k; kill
 bindkey -k F1 title
