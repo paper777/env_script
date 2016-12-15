@@ -4,7 +4,10 @@ VERSION="0.1.0"
 CONFIG=./.deploy
 TARGET=deploy
 SSH_HOST=
+SSH_OPTIONS=
 SSH_PATH=
+IdentityFile=
+
 
 # Common stuff
 RED="$(tput setaf 1)"
@@ -72,10 +75,12 @@ read_config() {
     # Check required params
     test -z "$host" && incomplete_config 'host'
     test -z "$path" && incomplete_config 'path'
+    test -z "$ssh_options" && ssh_options="-p 22"
     test -z "$host" || test -z "$path" && exit 1
     
     # Expose params
     SSH_HOST=$host
+    SSH_OPTIONS=$ssh_options
     SSH_PATH=$path
 }
 
@@ -138,7 +143,7 @@ run_remote() {
         cd \"$SSH_PATH\"
         $1
     """
-    ssh -A $2 "$SSH_HOST" "$script"
+    ssh -A $2 $SSH_OPTIONS "$SSH_HOST" "$script"
 }
 
 # Run local script
