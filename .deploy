@@ -1,7 +1,13 @@
-host
-path=
-ssh_options=
+# adeploy config file example
+host=myhost.com
+path=/path/to/workspace
+ssh_options="-p 999"
 
 [local]
+# git push origin master
 
 [deploy]
+# git stash
+# git pull origin master
+# git stash pop
+# whatever u want
