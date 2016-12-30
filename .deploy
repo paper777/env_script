@@ -1,0 +1,7 @@
+host
+path=
+ssh_options=
+
+[local]
+
+[deploy]
