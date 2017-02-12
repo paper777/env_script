@@ -629,6 +629,13 @@ function! JavaScriptFold()
 endfunction
 
 """"""""""""""""""""""""""""""
+" => vue component section
+""""""""""""""""""""""""""""""
+autocmd BufRead,BufNewFile *.vue set filetype=vue
+autocmd FileType vue setlocal shiftwidth=2
+autocmd FileType vue setlocal tabstop=2
+
+""""""""""""""""""""""""""""""
 " => ActionScript section
 """""""""""""""""""""""""""""""
 au BufNewFile,BufRead *.as set filetype=actionscript
