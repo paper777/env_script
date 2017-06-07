@@ -16,6 +16,7 @@ alias ll='ls -al'
 alias grep='grep --color=auto'
 alias screen='screen -U'
 alias wget='wget --no-check-certificate'
+alias play='mpv'
 alias f='cd /var/www/html/'
 alias psg='ps aux | grep'
 
@@ -86,7 +87,8 @@ compinit
 #######
 export PATH=$PATH:/usr/local/bin
 
-#alias for cnpm
+alias emacs="emacs --insecure"
+
 alias cnpm="npm --registry=https://registry.npm.taobao.org \
     --cache=$HOME/.npm/.cache/cnpm \
     --disturl=https://npm.taobao.org/dist \
