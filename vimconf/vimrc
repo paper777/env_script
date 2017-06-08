@@ -126,12 +126,9 @@ NeoBundle 'kien/ctrlp.vim' "{{{
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_follow_symlinks = 1
 if executable('ag')
-    let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup -g "" --ignore-dir ".svn" --ignore-dir ".
-git" --ignore "*.pyc" --ignore "*.pyo" --ignore-dir "node_modules" --ignore-dir "vendor" --ignore-dir 
-"Admin"'
+    let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup -g "" --ignore-dir ".svn" --ignore-dir ".git" --ignore "*.pyc" --ignore "*.pyo" --ignore-dir "node_modules" --ignore-dir "vendor" --ignore-dir "Admin"
 else
-    let g:ctrlp_user_command = "find -L %s -type f \! \\( -path '*/.svn/*' -or -path '*/.git/*' -or -n
-ame '*.rrd' -or -name '*.pyc' -or -name '*.pyo' -or -name 'node_module' -or -name 'vendor' \\)"
+    let g:ctrlp_user_command = "find -L %s -type f \! \\( -path '*/.svn/*' -or -path '*/.git/*' -or -name '*.rrd' -or -name '*.pyc' -or -name '*.pyo' -or -name 'node_module' -or -name 'vendor' -or -name 'Admin'"
 endif
 "}}}
 NeoBundle 'scrooloose/nerdtree' "{{{
