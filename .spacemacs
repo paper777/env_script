@@ -30,7 +30,6 @@ values."
    dotspacemacs-configuration-layers
    '(
      vimscript
-     c
      go
      nginx
      html
@@ -305,6 +304,9 @@ values."
    ))
 
 (defun dotspacemacs/user-init()
+ (setq tramp-default-method "ssh")
+ (setq tramp-ssh-controlmaster-options
+       "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
  (setq configuration-layer--elpa-archives
   '(("melpa-cn" . "http://elpa.zilongshanren.com/melpa/")
     ("org-cn"   . "http://elpa.zilongshanren.com/org/")
