@@ -21,3 +21,10 @@
     br = branch
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset' --abbrev-commit
     hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[pull]
+	rebase = true
