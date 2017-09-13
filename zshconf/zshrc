@@ -38,7 +38,7 @@ bindkey '^R' history-incremental-search-backward
 # DISABLE_LS_COLORS="true"
 
 # Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE="true"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 # COMPLETION_WAITING_DOTS="true"
@@ -86,7 +86,7 @@ compinit
 #######
 # dev
 #######
-export PATH=$PATH:/usr/local/bin
+export PATH=$PATH:/usr/local/bin:/usr/local/node/bin
 if [ "$(uname)" != "Darwin" ]; then
     export TERM=xterm-256color
 fi
