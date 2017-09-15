@@ -153,6 +153,7 @@ let g:user_zen_settings = { 'lang': "zh-CN" }
 "}}}
 NeoBundle 'taglist.vim' "{{{
 noremap <F3> :TlistToggle<cr>
+let g:Tlist_Ctags_Cmd='/usr/bin/ctags'
 "}}}
 NeoBundle 'tpope/vim-fugitive' "{{{
 noremap <leader>g :Gstatus<cr><c-w>_
